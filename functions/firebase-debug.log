@@ -1,0 +1,340 @@
+[debug] [2018-03-20T04:28:28.026Z] ----------------------------------------------------------------------
+[debug] [2018-03-20T04:28:28.028Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-03-20T04:28:28.029Z] CLI Version:   3.17.6
+[debug] [2018-03-20T04:28:28.029Z] Platform:      win32
+[debug] [2018-03-20T04:28:28.029Z] Node Version:  v8.9.4
+[debug] [2018-03-20T04:28:28.029Z] Time:          Tue Mar 20 2018 11:28:28 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:28.029Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-20T04:28:28.042Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-20T04:28:28.042Z] > authorizing via signed-in user
+[debug] [2018-03-20T04:28:28.044Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/androidexam-d1a9d  
+  
+ Tue Mar 20 2018 11:28:28 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:29.848Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:28:29.848Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/androidexam-d1a9d/tokens  
+  
+ Tue Mar 20 2018 11:28:29 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:30.799Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'androidexam-d1a9d'...
+[info] 
+[info] i  deploying database, functions
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-03-20T04:28:42.979Z] >>> HTTP REQUEST PUT https://androidexam-d1a9d.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Tue Mar 20 2018 11:28:42 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:44.379Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database androidexam-d1a9d is valid
+[debug] [2018-03-20T04:28:44.394Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "firebase": "^4.11.0",
+    "firebase-admin": "~5.8.1",
+    "firebase-functions": "^0.8.1"
+  },
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-03-20T04:28:44.394Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/androidexam-d1a9d?view=CONSUMER_VIEW  
+  
+ Tue Mar 20 2018 11:28:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:44.394Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/androidexam-d1a9d?view=CONSUMER_VIEW  
+  
+ Tue Mar 20 2018 11:28:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:47.546Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-03-20T04:28:48.461Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:28:48.461Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/androidexam-d1a9d  
+  
+ Tue Mar 20 2018 11:28:48 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:50.015Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:28:50.016Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/880384297636:getServerAppConfig  
+  
+ Tue Mar 20 2018 11:28:50 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:50.955Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-03-20T04:28:50.961Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/androidexam-d1a9d/configs  
+  
+ Tue Mar 20 2018 11:28:50 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:51.965Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (44.07 KB) for uploading
+[debug] [2018-03-20T04:28:52.936Z] >>> HTTP REQUEST GET https://www.googleapis.com/storage/v1/b/staging.androidexam-d1a9d.appspot.com  
+  
+ Tue Mar 20 2018 11:28:52 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:54.063Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:28:54.063Z] >>> HTTP REQUEST POST https://www.googleapis.com/upload/storage/v1/b/staging.androidexam-d1a9d.appspot.com/o?uploadType=media&name=firebase-functions-source  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 45123,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: 'C:\\Users\\Admin\\AppData\\Local\\Temp\\firebase-functions-5696iDbCLRiHeMxb.zip',
+  fd: 5,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 45123 } 
+ Tue Mar 20 2018 11:28:54 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:55.216Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  database: releasing rules...
+[debug] [2018-03-20T04:28:55.227Z] >>> HTTP REQUEST PUT https://androidexam-d1a9d.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Tue Mar 20 2018 11:28:55 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:56.110Z] <<< HTTP RESPONSE 200
+[info] +  database: rules for database androidexam-d1a9d released successfully
+[debug] [2018-03-20T04:28:56.110Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/androidexam-d1a9d/locations/us-central1/functions  
+  
+ Tue Mar 20 2018 11:28:56 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:28:56.911Z] <<< HTTP RESPONSE 200
+[info] i  functions: creating function apiUrl...
+[debug] [2018-03-20T04:28:56.911Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2018-03-20T04:28:56.926Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/androidexam-d1a9d/locations/us-central1/functions  
+ { sourceArchiveUrl: 'gs://staging.androidexam-d1a9d.appspot.com/firebase-functions-source',
+  name: 'projects/androidexam-d1a9d/locations/us-central1/functions/apiUrl',
+  entryPoint: 'apiUrl',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  httpsTrigger: {} } 
+ Tue Mar 20 2018 11:28:56 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:01.290Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:01.294Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/androidexam-d1a9d/locations/us-central1/functions  
+  
+ Tue Mar 20 2018 11:29:01 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:02.537Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:02.538Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:02 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:03.186Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:05.202Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:05 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:08.860Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:10.875Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:10 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:20.552Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:22.554Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:22 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:23.271Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:25.272Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:25 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:25.958Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:27.960Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:27 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:28.610Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:30.612Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:30 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:31.620Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:33.621Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:33 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:34.541Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:36.541Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:36 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:37.164Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:39.164Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:39 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:42.163Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:44.163Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:44.810Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:46.812Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:46 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:47.498Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:49.499Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:49 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:51.466Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:53.466Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:53 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:54.547Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:56.548Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:56 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:29:57.725Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:29:59.725Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:29:59 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:00.682Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:02.683Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:02 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:05.095Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:07.097Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:07 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:09.792Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:11.794Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:11 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:15.430Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:17.430Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:17 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:21.483Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:23.483Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:23 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:24.140Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:26.141Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:26 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:27.412Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:29.413Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:29 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:30.288Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:32.290Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:32 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:33.055Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:30:35.056Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:30:35 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:30:56.057Z] [functions] failed to get status of operation: operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J
+[debug] [2018-03-20T04:30:56.057Z] [functions] Server Error. connect ETIMEDOUT 74.125.200.95:443
+[debug] [2018-03-20T04:31:00.059Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:00 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:00.726Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:02.726Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:02 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:03.407Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:05.407Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:05 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:06.078Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:08.079Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:08 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:09.067Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:11.072Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:11 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:12.400Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:14.405Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:14 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:14.774Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:16.784Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:16 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:17.441Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:19.455Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:19 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:20.644Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:22.658Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:22 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:24.008Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:26.020Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:26 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:27.708Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:29.722Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:29 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:30.862Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:32.876Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:32 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:33.486Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:35.501Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:35 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:35.860Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:37.874Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:37 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:42.558Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:44.573Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:45.447Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:47.461Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:48.087Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:50.097Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:50 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:50.748Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:52.768Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:52 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:54.126Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T04:31:56.144Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YW5kcm9pZGV4YW0tZDFhOWQvdXMtY2VudHJhbDEvYXBpVXJsL1hfUW5Wc1hnbE9J  
+  
+ Tue Mar 20 2018 11:31:56 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-03-20T04:31:56.518Z] <<< HTTP RESPONSE 200
